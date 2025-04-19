@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="form design.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head> 
+<center>
+<body bgcolor="lightgray">
+
+    <h1 style="text-align:center; color: blue;">Register Form</h1>
+    <form id="registerForm" name="form1" method="post">
+        
+        <div class="input-container">
+            <i class="fa fa-user icon"></i>
+            <input  type="text" name="text3"class="input-field" id="username" placeholder="Username" name="usrnm" >
+        </div>
+
+        <div class="input-container">
+            <i class="fa fa-envelope icon"></i>
+            <input  type="email"class="input-field" id="email" placeholder="Email" name="email" >
+        </div>
+
+        <div class="input-container">
+            <i class="fa fa-key icon"></i>
+            <input type="password" class="input-field"id="text1" placeholder="Password" name="psw" >
+        </div>
+
+        <div class="input-container">
+            <i class="fa fa-key icon"></i>
+            <input  type="password"class="input-field" id="text2" placeholder="Confirm Password" name="confirmPsw" >
+        </div>
+        <input type="button" value="Check Password" onclick="return match();"><br><br>
+
+        <h2>Choose your continent</h2>
+        <label><input type="radio" name="continent" value="Africa" required> Africa</label>
+        <label><input type="radio" name="continent" value="Asia"> Asia</label>
+        <label><input type="radio" name="continent" value="Europe"> Europe</label>
+        <label><input type="radio" name="continent" value="America"> America</label>
+        <label><input type="radio" name="continent" value="Australia"> Australia</label>
+
+        <br><br>
+        <img src="images.jpg" width="1000" height="300">
+        <br><br>
+
+        <input type="submit" value="Register" class="btn" onclick="return req();"><br> <br>
+        <input type="button" value="reset" class="btn" onclick="resetForm()"><br><br><br>
+        <a href="Map Page.html">move to next page</a>
+
+        <br><br>
+       
+        <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+    </center>
+    </form>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit",
+         function(event) {
+            let password = document.getElementById("text1").value;
+            let confirmPassword = document.getElementById("text2").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                event.preventDefault();
+            }
+        });
+        function match() {
+            if (form1.text1.value !== form1.text2.value) {
+                alert("Passwords do not match");
+                return false;
+            }
+        }
+        function req() {
+            if (form1.text3.value == "") {
+                alert("Required field");
+                return false;
+            }
+        }
+
+
+        function resetForm() {
+            document.getElementById("registerForm").reset();
+        }
+        alert("welcome to our agency");  
+    </script>
+
+</body>
+</html>

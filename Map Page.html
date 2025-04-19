@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Map</title>
+    <link href="Map Design.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div class="container">
+        <h1>Interactive Map of Africa</h1>
+                    <!-- Navigation Button -->
+    <button onclick="budget()" class="nav-button">Go to Budget Page</button>
+        <h2>Country Information</h2>
+
+        <div id="infoBox" class="editable"></div>
+
+        <div class="map-container">
+            <img src="africa_map.png" alt="Africa Map">
+
+            <button class="country-button" style="top: 75px; left: 60%;" onclick="showInfo('Egypt')">Egypt</button>
+
+
+    <script>
+        function budget() {
+            window.location.href = "Budget Page.html"; // Redirect to the booking page
+        }
+
+        function showInfo(country) {
+            let c_area, c_sites, c_currency;
+
+            if (country === "Egypt") {
+                c_area = "1,010,408 km²";  
+                c_sites = "Pyramids of Giza, Nile River";
+                c_currency = "Egyptian Pound";
+            } 
+
+            document.getElementById("infoBox").innerHTML = 
+                `<strong>The country is:</strong> ${country}<br>
+                 <strong>Area:</strong> ${c_area}<br>
+                 <strong>Sites:</strong> ${c_sites}<br>
+                 <strong>Currency:</strong> ${c_currency}`;
+        }
+    </script>
+
+</body>
+</html>
